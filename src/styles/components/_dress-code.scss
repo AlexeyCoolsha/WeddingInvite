@@ -1,0 +1,60 @@
+@use '../abstracts' as abs;
+
+.dress-code {
+  &__palette {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 24px;
+  }
+
+  &__color {
+    width: 64px;
+    height: 128px;
+    border-radius: 4px;
+    flex-shrink: 0;
+    position: relative;
+  }
+
+  &__labels {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    margin-top: 24px;
+    flex-wrap: wrap;
+  }
+
+  &__label {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    width: 64px;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: abs.$text-color;
+    letter-spacing: 0.5px;
+    margin-top: 4px;
+    &::before {
+      content: '';
+      position: absolute;
+      top: -48px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 1px;
+      height: 36px;
+      background: abs.$text-color;
+    }
+  }
+
+  @media (max-width: 600px) {
+    &__color {
+      width: 50px;
+      height: 100px;
+    }
+    &__label {
+      width: 50px;
+      font-size: 12px;
+    }
+  }
+}

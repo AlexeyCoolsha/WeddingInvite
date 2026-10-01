@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/public/favicon.webp" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+    <title>Invite</title>
+  </head>
+  <!-- <body class="intro-open"> -->
+  <body>
+    <!-- Intro -->
+    <div id="introOverlay" class="intro-overlay">
+      <div class="intro-overlay__content">
+        <h1 class="intro-overlay__title">
+          <span>13</span>
+          <span>06</span>
+          <span>26</span>
+        </h1>
+        <div class="intro-overlay__bottom">
+          <button id="enterBtn" class="intro-overlay__button button">Открыть пригласительное</button>
+        </div>
+      </div>
+    </div>
+    <div id="app" style="display: none">
+      <div class="container">
+        <!-- Collage -->
+        <section class="section collage collage--single">
+          <div class="decoration collage-decoration">
+            <img class="decoration__svg" src="./src/assets/images/CollageDecoration.svg"></img>
+          </div>
+          <div class="collage__content">
+            <div class="collage-stripe" aria-hidden="true">
+              <svg class="collage-stripe__svg" viewBox="0 0 549 917" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M283.923 0.29048C251.09 46.2905 160.023 137.89 58.4233 136.29C-68.5767 134.29 13.9233 -107.21 299.423 223.29M481.423 519.79C559.423 690.957 635.023 1008.79 299.423 890.79"
+                  stroke="#790F2E"
+                  pathLength="1" />
+              </svg>
+            </div>
+            <div class="collage__single" style="background-image: url('/src/assets/images/collage1.png')">
+              <div class="collage__names">
+                <span class="collage__name collage__name--top">Валерия</span>
+                <span class="collage__name collage__name--bottom">Александр</span>
+              </div>
+              <button class="audio-button audio-button--play" id="audioBtn">
+                <span class="audio-button__icon"></span>
+                <div class="audio-button__tooltip" data-tooltip>
+                  <span class="audio-button__tooltip-text">выключить музыку</span>
+                  <div class="audio-button__tooltip-pointer"></div>
+                </div>
+              </button>
+            </div>
+            <audio id="audio" src="./src/assets/audio/music.mp3" autoplay muted preload="auto"></audio>
+          </div>
+        </section>
+        <!-- Introduction -->
+        <section class="section introduction">
+          <div class="block block--align-center">
+            <h2 class="block__title">Дорогие родные и друзья,</h2>
+            <p class="block__text">приглашаем вас разделить с нами день, с которого начинается наша семья</p>
+          </div>
+          <div class="calendar-extended" aria-label="Календарь">
+            <div class="calendar-extended__month">Июнь</div>
+            <div class="calendar-extended__grid calendar-extended__grid--weekdays" aria-hidden="true">
+              <span>пн</span>
+              <span>вт</span>
+              <span>ср</span>
+              <span>чт</span>
+              <span>пт</span>
+              <span>сб</span>
+              <span>вс</span>
+            </div>
+            <div class="calendar-extended__grid calendar-extended__grid--dates">
+              <span class="calendar-extended__day">1</span>
+              <span class="calendar-extended__day">2</span>
+              <span class="calendar-extended__day">3</span>
+              <span class="calendar-extended__day">4</span>
+              <span class="calendar-extended__day">5</span>
+              <span class="calendar-extended__day calendar-extended__day--marked calendar-extended__day--ring">
+                <span class="calendar-extended__marker" aria-hidden="true">
+                  <img class="calendar-extended__marker-image" src="/src/assets/images/Ring.svg" alt="" />
+                </span>
+                6
+              </span>
+              <span class="calendar-extended__day">7</span>
+              <span class="calendar-extended__day">8</span>
+              <span class="calendar-extended__day">9</span>
+              <span class="calendar-extended__day">10</span>
+              <span class="calendar-extended__day">11</span>
+              <span class="calendar-extended__day">12</span>
+              <span class="calendar-extended__day">13</span>
+              <span class="calendar-extended__day">14</span>
+              <span class="calendar-extended__day">15</span>
+              <span class="calendar-extended__day">16</span>
+              <span class="calendar-extended__day">17</span>
+              <span class="calendar-extended__day">18</span>
+              <span class="calendar-extended__day">19</span>
+              <span class="calendar-extended__day">20</span>
+              <span class="calendar-extended__day">21</span>
+              <span class="calendar-extended__day">22</span>
+              <span class="calendar-extended__day">23</span>
+              <span class="calendar-extended__day">24</span>
+              <span class="calendar-extended__day">25</span>
+              <span class="calendar-extended__day">26</span>
+              <span class="calendar-extended__day">27</span>
+              <span class="calendar-extended__day">28</span>
+              <span class="calendar-extended__day">29</span>
+              <span class="calendar-extended__day">30</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Location -->
+        <section class="section location">
+          <div class="split split--center split--stacked">
+            <div class="split__item split__item--stacked">
+              <figure class="media-frame media-frame--notch location__media">
+                <div class="media-frame__media" style="background-image: url('/src/assets/images/restaurant.webp')"></div>
+              </figure>
+              <div class="info-card location__info-card">
+                <h2 class="info-card__title">Локация</h2>
+                <div class="info-card__rows">
+                  <span class="info-card__row">Shale Alpine House</span>
+                  <span class="info-card__row">г.Бахчисарай, с.Новоульяновка</span>
+                </div>
+                <div class="info-card__button">
+                  <a
+                    class="button"
+                    href="https://yandex.ru/navi/org/shale_alpine_house/4892704436?si=5vcrka8d8gd09vh2fjqe5kqepm"
+                    target="_blank"
+                    >Открыть карту
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Timeline -->
+        <section class="section timeline">
+          <div class="decoration timeline-decoration timeline-decoration--first">
+            <img src="/src/assets/images/timeline-decoration--first.svg" alt="decoration" class="decoration__svg" />
+          </div>
+          <div class="decoration timeline-decoration timeline-decoration--second">
+            <img src="/src/assets/images/timeline-decoration--second.svg" alt="decoration" class="decoration__svg" />
+          </div>
+          <div class="timeline-stripe" aria-hidden="true">
+            <svg class="timeline-stripe__svg" viewBox="0 0 801 1464" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M800.344 0.464339C589.178 84.7977 171.244 280.264 188.844 387.464C210.844 521.464 569.344 494.964 520.844 637.964C472.344 780.964 155.844 769.195 155.844 883.964C155.844 970.464 674.187 1261.86 698.844 1200.96C731.844 1119.46 558.344 1136.96 426.344 1200.96C320.744 1252.16 90.5111 1377.8 0.344391 1463.46"
+                stroke="#790F2E"
+                pathLength="1" />
+            </svg>
+          </div>
+          <div class="block block--align-center">
+            <h2 class="block__title">Как пройдет наш день</h2>
+          </div>
+          <div class="timeline-grid">
+            <div class="block block--align-left event event--left">
+              <div class="block__upper">15:00</div>
+              <h2 class="block__title">Сбор гостей</h2>
+              <p class="block__text">C нетерпением ждём встречи с вами</p>
+            </div>
+            <div class="block block--align-left event event--left">
+              <div class="block__upper">15:30</div>
+              <h2 class="block__title">Welcome - фуршет</h2>
+              <p class="block__text">Игристое, легкая атмосфера и время для общения</p>
+            </div>
+            <div class="block block--align-left event event--right">
+              <div class="block__upper">16:30</div>
+              <h2 class="block__title">Торжественная церемония</h2>
+              <p class="block__text">Тот самый особенный момент</p>
+            </div>
+            <div class="block block--align-left event event--left">
+              <div class="block__upper">17:30</div>
+              <h2 class="block__title">Банкет</h2>
+              <p class="block__text">Праздничный ужин и теплый вечер вместе</p>
+            </div>
+            <div class="block block--align-left event event--left">
+              <div class="block__upper">23:30</div>
+              <h2 class="block__title">Финал программы</h2>
+              <p class="block__text">Завершение основной части праздника</p>
+            </div>
+            <div class="block block--align-left event event--right-offset">
+              <div class="block__upper">23:30-1:00</div>
+              <h2 class="block__title">After Party</h2>
+              <p class="block__text">Для тех, кто захочет продолжить этот вечер</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Dress Code -->
+        <section class="section dress-code">
+          <div class="block block--align-center">
+            <h2 class="block__title">Дресс код</h2>
+            <p class="block__text">
+              Будем благодарны, если в своих образах вы поддержите палитру нашего вечера - от светло - бежевого до темно
+              - коричневого
+            </p>
+          </div>
+          <div class="dress-code__palette">
+            <div class="dress-code__color" style="background: #f1d7d0"></div>
+            <div class="dress-code__color" style="background: #a6806b"></div>
+            <div class="dress-code__color" style="background: #75584a"></div>
+            <div class="dress-code__color" style="background: #402c25"></div>
+          </div>
+          <!-- <div class="dress-code__labels">
+            <span class="dress-code__label">Чёрный</span>
+            <span class="dress-code__label">Красный</span>
+            <span class="dress-code__label">Графит</span>
+            <span class="dress-code__label">Серый</span>
+          </div> -->
+        </section>
+
+        <!-- RSVP Form -->
+        <section class="section form-section">
+          <div class="decoration form-section-decoration">
+              <img src="/src/assets/images/form-decoration.svg" alt="decoration" class="decoration__svg" />
+            </div>
+          <div class="block block--align-center">
+            <h2 class="block__title">Анкета гостя</h2>
+            <p class="block__text">
+              Будем благодарны, если вы заполните анкету ниже до 15 апреля 2026 года. Это поможет нам лучше
+              подготовиться к празднику.
+            </p>
+          </div>
+          <div class="rsvp-form">
+            <form>
+              <!-- Attendance Question -->
+              <div class="rsvp-form__group">
+                <label class="rsvp-form__label">Ваше присутствие на торжестве?</label>
+                <div class="rsvp-form__radio-group">
+                  <label class="rsvp-form__radio-item">
+                    <input type="radio" name="attendance" value="yes" class="rsvp-form__radio-input" required />
+                    <span class="rsvp-form__radio-label">Да, с удовольствием приду!</span>
+                  </label>
+                  <label class="rsvp-form__radio-item">
+                    <input type="radio" name="attendance" value="no" class="rsvp-form__radio-input" required />
+                    <span class="rsvp-form__radio-label">К сожалению, не смогу присутствовать.</span>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Name Field -->
+              <div class="rsvp-form__group">
+                <label class="rsvp-form__label">Ваше имя и фамилия</label>
+                <!-- <span class="rsvp-form__subtitle">если вы будете с парой или семьей, то внесите все имена</span> -->
+                <input type="text" name="name" class="rsvp-form__input" placeholder="Иван Петров" required />
+              </div>
+
+              <!-- Drinks Preferences -->
+              <div class="rsvp-form__group">
+                <label class="rsvp-form__label">Что предпочитаете из напитков?</label>
+                <div class="rsvp-form__checkbox-group">
+                  <label class="rsvp-form__checkbox-item">
+                    <input type="checkbox" name="drinks" value="Вино" class="rsvp-form__checkbox-input" />
+                    <span class="rsvp-form__checkbox-label">Вино</span>
+                  </label>
+                  <label class="rsvp-form__checkbox-item">
+                    <input type="checkbox" name="drinks" value="Шампанское" class="rsvp-form__checkbox-input" />
+                    <span class="rsvp-form__checkbox-label">Шампанское</span>
+                  </label>
+                  <label class="rsvp-form__checkbox-item">
+                    <input type="checkbox" name="drinks" value="Водка" class="rsvp-form__checkbox-input" />
+                    <span class="rsvp-form__checkbox-label">Водка</span>
+                  </label>
+                  <label class="rsvp-form__checkbox-item">
+                    <input type="checkbox" name="drinks" value="Виски" class="rsvp-form__checkbox-input" />
+                    <span class="rsvp-form__checkbox-label">Виски</span>
+                  </label>
+                  <label class="rsvp-form__checkbox-item">
+                    <input type="checkbox" name="drinks" value="Коньяк" class="rsvp-form__checkbox-input" />
+                    <span class="rsvp-form__checkbox-label">Коньяк</span>
+                  </label>
+                  <label class="rsvp-form__checkbox-item">
+                    <input
+                      type="checkbox"
+                      name="drinks"
+                      value="Безалкогольные напитки"
+                      class="rsvp-form__checkbox-input" />
+                    <span class="rsvp-form__checkbox-label">Безалкогольные напитки</span>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Submit Button -->
+              <button type="submit" class="rsvp-form__submit-btn">Отправить</button>
+            </form>
+          </div>
+        </section>
+
+        <!-- Wishes -->
+        <section class="section wishes">
+          <div class="block block--align-center">
+            <h2 class="block__title">Несколько просьб</h2>
+          </div>
+          <div class="wishes__split">
+            <div class="wishes__card">
+              <div class="decoration wishes__card-decoration">
+                <img src="/src/assets/images/wishes-card-decoration.svg" alt="decoration" class="decoration__svg" />
+              </div>
+              <div class="block block--align-left block--compact block--wishes">
+                <h3 class="block__title">Традиция «Горько!»</h3>
+                <p class="block__text">
+                  Мы решили отказаться от этой традиции и будем рады вашим тёплым словам, улыбкам и объятиям.
+                </p>
+              </div>
+            </div>
+            <div class="wishes__card">
+              <div class="block block--align-left block--compact block--wishes">
+                <h3 class="block__title">Цветы</h3>
+                <p class="block__text">
+                  К сожалению, насладиться красотой подаренных букетов долго не получится, поэтому вместо цветов будем
+                  рады бутылочке вашего любимого напитка для нашего семейного бара. <br />
+                  <br />
+                  Мы подготовим специальные бирочки, на которых вы сможете написать пожелание или повод, когда нам стоит
+                  открыть эту бутылку
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Final quote/image section -->
+        <!-- <section class="section final">
+          <div class="final__intro">
+            <div class="final__text-block">
+              <p>
+                Вы не просто так получили это приглашение!<br />В особенный для нас день мы очень хотим, чтобы вы были
+                рядом!
+              </p>
+            </div>
+          </div>
+          <div class="final__image" style="background-image: url('/src/assets/images/kiss.webp')"></div>
+          <div class="final__quote">
+            <div class="final__text-block">
+              <p>В ЭТОМ <em>мире</em> ТЫ ВСЕГО ЛИШЬ ЧЕЛОВЕК, НО ДЛЯ КОГО-ТО ТЫ — <em> весь мир</em></p>
+            </div>
+          </div>
+        </section> -->
+
+        <!-- Countdown -->
+        <section class="section countdown-section">
+          <div class="block block--align-center">
+            <h2 class="block__title">До нашей свадьбы</h2>
+          </div>
+
+          <div class="countdown" data-countdown="2026-06-13T00:00:00">
+            <div class="countdown__label">ОСТАЛОСЬ:</div>
+            <div class="countdown__timer">
+              <div class="countdown__unit">
+                <div class="countdown__value countdown__value--days">0</div>
+                <div class="countdown__unit-label" data-label="days">дней</div>
+              </div>
+              <div class="countdown__separator">:</div>
+              <div class="countdown__unit">
+                <div class="countdown__value countdown__value--hours">00</div>
+                <div class="countdown__unit-label" data-label="hours">часов</div>
+              </div>
+              <div class="countdown__separator">:</div>
+              <div class="countdown__unit">
+                <div class="countdown__value countdown__value--minutes">00</div>
+                <div class="countdown__unit-label" data-label="minutes">минут</div>
+              </div>
+              <div class="countdown__separator">:</div>
+              <div class="countdown__unit">
+                <div class="countdown__value countdown__value--seconds">00</div>
+                <div class="countdown__unit-label" data-label="seconds">секунд</div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>
+
+

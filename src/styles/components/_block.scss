@@ -1,0 +1,64 @@
+@use '../abstracts' as abs;
+
+.block {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  &__upper {
+    font-size: 32px;
+  }
+  &__title {
+    font-size: 42px;
+    font-weight: 200;
+    font-family: abs.$script-font-stack;
+  }
+  &__text {
+    display: inline-block;
+    max-width: 320px;
+  }
+  &--align-left {
+    align-items: flex-start;
+    & .block__text {
+      text-align: left;
+    }
+    & .block__upper {
+      text-align: left;
+    }
+    & .block__title {
+      text-align: left;
+    }
+  }
+  &--align-center {
+    align-items: center;
+    & .block__text {
+      text-align: center;
+    }
+    & .block__upper {
+      text-align: center;
+    }
+    & .block__title {
+      text-align: center;
+    }
+  }
+
+  &--compact {
+    gap: 8px;
+    & .block__title {
+      font-size: 30px;
+      line-height: 1.1;
+    }
+    & .block__text {
+      font-size: 16px;
+      line-height: 1.65;
+      max-width: 300px;
+    }
+  }
+
+  &--wishes {
+    & .block__title,
+    & .block__text {
+      margin: 0;
+      color: #ffffff;
+    }
+  }
+}

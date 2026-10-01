@@ -1,0 +1,8 @@
+@use '../abstracts' as abs;
+
+.section {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;   
+    margin-bottom: 72px;
+}

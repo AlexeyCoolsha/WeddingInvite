@@ -1,0 +1,106 @@
+@use '../abstracts/' as abs;
+
+.audio-button {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 50%);
+  width: abs.$btn-size;
+  height: abs.$btn-size;
+  border-radius: 50%;
+  background: abs.$color-accent;
+  border: none;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: 0.2s ease;
+
+  &:hover {
+    transform: translate(-50%, 50%) scale(1.05);
+  }
+
+  &__icon {
+    width: 0;
+    height: 0;
+  }
+
+  // ▶ PLAY
+  &--play .audio-button__icon {
+    border-left: 18px solid abs.$color-white;
+    border-top: 12px solid transparent;
+    border-bottom: 12px solid transparent;
+    margin-left: 4px;
+  }
+
+  // ⏸ PAUSE
+  &--pause .audio-button__icon {
+    width: 18px;
+    height: 18px;
+    border: none;
+    position: relative;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      width: 6px;
+      height: 100%;
+      background: abs.$color-white;
+    }
+
+    &::after {
+      right: 0;
+    }
+
+    &::before {
+      left: 0;
+    }
+  }
+
+  &__tooltip {
+    position: absolute; 
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: abs.$color-accent;
+    color: abs.$color-white;
+    padding: 10px 16px;
+    border-radius: 8px;
+    white-space: nowrap;
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 12px;
+    opacity: 1;
+    visibility: visible;
+    transition:
+      opacity 0.3s ease,
+      visibility 0.3s ease;
+    pointer-events: none;
+    z-index: 10;
+
+    &.hidden {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+
+  &__tooltip-pointer {
+    position: absolute;
+    top: -6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-bottom: 6px solid abs.$color-accent;
+  }
+
+  &__tooltip-text {
+    display: block;
+  }
+}

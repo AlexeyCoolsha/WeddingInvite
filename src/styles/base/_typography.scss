@@ -1,0 +1,8 @@
+@use '../abstracts';
+
+body {
+  color: abstracts.$text-color;
+  font: normal 20px / 1.2 abstracts.$text-font-stack;
+  font-weight: 300;
+}
+

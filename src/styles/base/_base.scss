@@ -1,0 +1,5 @@
+@use '../abstracts' as abs;
+
+body {
+  background: abs.$body-background-color;
+}

@@ -1,0 +1,171 @@
+@use '../abstracts/' as abs;
+
+.collage {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  max-height: 800px;
+  min-height: 300px;
+  width: 100%;
+
+  &--single {
+    &__content {
+      width: 55%;
+    }
+  }
+
+  &__content {
+    position: relative;
+    height: auto;
+    width: 50%;
+  }
+
+  &__single {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    aspect-ratio: 2/3;
+    background: var(--collage-image, abs.$color-light-gray) center/cover no-repeat;
+    border-radius: 24px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+  }
+
+  &__names {
+    position: absolute;
+    left: 50%;
+    bottom: 26px;
+    transform: translateX(-50%);
+    text-align: center;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  &__name {
+    display: block;
+    color: abs.$color-accent;
+    font-family: abs.$script-font-stack;
+    line-height: 1;
+    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+
+    &--top {
+      font-size: 68px;
+      letter-spacing: 0.2px;
+    }
+
+    &--bottom {
+      font-size: 92px;
+      margin-top: -20px;
+    }
+  }
+
+  &-decoration {
+    top: 0;
+    right: -16px;
+    max-width: 40%;
+    z-index: 2;
+  }
+
+  //   & .audio-button {
+  //     position: absolute;
+  //     left: 50%;
+  //     bottom: 0;
+  //     transform: translate(-50%, 50%);
+  //     z-index: 2;
+  //   }
+}
+
+.collage-stripe {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 0;
+  width: 125%;
+  top: -28%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.collage-stripe__svg {
+  height: auto;
+  width: 100%;
+}
+
+.collage-stripe__svg path {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  transition: stroke-dashoffset var(--collage-stripe-duration, 1200ms) ease;
+}
+
+@media screen and (min-width: 800px) {
+  .collage {
+    &-decoration {
+      top: -96px;
+      right: -16px;
+      max-width: 35%;
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .collage--single {
+    & .collage__content {
+      width: 60%;
+    }
+  }
+  .collage {
+    height: auto;
+    padding: 100px 0;
+    margin-bottom: 0;
+
+    &__content {
+      height: auto;
+      width: 90%;
+    }
+
+    &__single {
+      min-height: 200px;
+    }
+
+    &__name {
+      &--top {
+        font-size: 60px;
+      }
+      &--bottom {
+        font-size: 84px;
+      }
+    }
+    &-decoration {
+      top: -60px;
+      right: -16px;
+      max-width: 35%;
+    }
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .collage--single {
+    & .collage__content {
+      width: 75%;
+    }
+  }
+  .collage {
+    &__name {
+      &--top {
+        font-size: 48px;
+      }
+      &--bottom {
+        font-size: 72px;
+      }
+    }
+    &-decoration {
+      top: 0;
+      right: -16px;
+      max-width: 40%;
+    }
+  }
+}

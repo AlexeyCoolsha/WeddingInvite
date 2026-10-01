@@ -1,0 +1,100 @@
+@use '../abstracts/' as abs;
+.intro-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  z-index: 9999;
+  flex-direction: column;
+  text-align: center;
+  color: abs.$color-white;
+  overflow: hidden;
+
+  background-color: black;
+  
+  height: 100dvh;
+  min-height: 100dvh;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("../../assets/images/intro.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    background-color: black;
+
+    filter: blur(4px);
+    // transform: scale(1.1); // чтобы края не обрезались
+    z-index: -1;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    padding: 10rem 5rem 15rem 5rem;
+    background-color: rgba($color: #000000, $alpha: 0.7);
+  }
+
+  &__title {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      font-size: clamp(90px, 18vw, 140px);
+      font-weight: 200;
+      line-height: 1;
+
+      gap: 40px;
+}
+  &_title span {
+  display: block;
+}
+
+  &__date {
+    font-size: 3rem;
+    font-weight: 100;
+    letter-spacing: 1px;
+    font-family: abs.$script-font-stack;
+  }
+
+  &__button {
+    padding: 1rem 6rem;
+    font-size: 1rem;
+    background: transparent;
+    border: 1px solid abs.$color-white;
+    border-radius: 0;
+    color: abs.$color-white;
+    cursor: pointer;
+    transition: background 0.2s;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
+  }
+
+  &.hidden {
+    display: none;
+  }
+}
+
+// prevent body scrolling while intro is visible
+body.no-scroll {
+  overflow: hidden;
+}
+
+@media screen and (max-width: 800px) {
+  .intro-overlay {
+    &__content {
+      padding: 10rem 2rem 5rem 2rem;
+    }
+  }
+}
